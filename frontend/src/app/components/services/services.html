@@ -5,48 +5,40 @@
       <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">
         Nos services
       </span>
-      <h2 class="display-6 fw-bold">Tout pour le bien-être de votre enfant</h2>
+      <h2 class="display-6 fw-bold">
+        Tout pour le bien-être de votre enfant
+      </h2>
       <p class="text-secondary section-description mx-auto">
         Des activités adaptées à chaque âge pour apprendre, découvrir et grandir.
       </p>
     </div>
 
     <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div class="service-icon">🎨</div>
-          <div class="card-body text-center">
-            <h3 class="h5 fw-bold">Activités créatives</h3>
-            <p class="text-secondary mb-0">
-              Dessin, peinture et bricolage pour développer l'imagination.
-            </p>
-          </div>
+      @if (loading) {
+        <div class="col-12 text-center">
+          <p class="text-secondary">Chargement des services...</p>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div class="service-icon">📚</div>
-          <div class="card-body text-center">
-            <h3 class="h5 fw-bold">Éveil et apprentissage</h3>
-            <p class="text-secondary mb-0">
-              Des jeux éducatifs pour découvrir les lettres, les chiffres et le monde.
-            </p>
-          </div>
+      } @else if (error) {
+        <div class="col-12 text-center">
+          <p class="text-danger">
+            Impossible de charger les services. Vérifiez que le backend est démarré.
+          </p>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3">
-          <div class="service-icon">🧸</div>
-          <div class="card-body text-center">
-            <h3 class="h5 fw-bold">Jeux et socialisation</h3>
-            <p class="text-secondary mb-0">
-              Des moments de partage pour apprendre à jouer et grandir ensemble.
-            </p>
+      } @else {
+        @for (service of services; track service.id) {
+          <div class="col-md-4">
+            <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-3">
+              <div class="service-icon">{{ service.icon }}</div>
+              <div class="card-body text-center">
+                <h3 class="h5 fw-bold">{{ service.nom }}</h3>
+                <p class="text-secondary mb-0">
+                  {{ service.description }}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        }
+      }
     </div>
   </div>
 </section>

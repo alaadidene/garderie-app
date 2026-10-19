@@ -1,0 +1,43 @@
+
+<section id="activites" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">
+        Nos activités
+      </span>
+      <h2 class="display-6 fw-bold">Des activités pour grandir et s'épanouir</h2>
+      <p class="text-secondary mx-auto">
+        Des expériences adaptées à l'âge de chaque enfant.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @if (loading) {
+        <div class="col-12 text-center">
+          <p class="text-secondary">Chargement des activités...</p>
+        </div>
+      } @else if (error) {
+        <div class="col-12 text-center">
+          <p class="text-danger">Impossible de charger les activités.</p>
+        </div>
+      } @else {
+        @for (activite of activites; track activite.id) {
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3">
+              <div class="card-body text-center">
+                <div class="display-5 mb-3">🧸</div>
+                <h3 class="h5 fw-bold">{{ activite.nom }}</h3>
+                <p class="text-secondary mb-2">
+                  {{ activite.categorie }}
+                </p>
+                <span class="badge bg-primary rounded-pill">
+                  Âge : {{ activite.age }}
+                </span>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>

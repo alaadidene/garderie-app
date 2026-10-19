@@ -1,9 +1,10 @@
+
 <section id="accueil" class="hero-section py-5">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
         <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">
-          Bienvenue chez GarderieKids
+          Bienvenue chez {{ garderie?.nom || 'GarderieKids' }}
         </span>
 
         <h1 class="display-4 fw-bold mb-4">
@@ -11,8 +12,7 @@
         </h1>
 
         <p class="lead text-secondary mb-4">
-          Un environnement chaleureux, sécurisé et stimulant pour accompagner
-          votre enfant dans ses premiers apprentissages.
+          {{ garderie?.description || 'Un environnement chaleureux, sécurisé et stimulant pour accompagner votre enfant dans ses premiers apprentissages.' }}
         </p>
 
         <a href="#services" class="btn btn-primary btn-lg rounded-pill px-4 me-2">
