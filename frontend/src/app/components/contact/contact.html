@@ -1,0 +1,49 @@
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">
+        Contact
+      </span>
+
+      <h2 class="display-6 fw-bold">Parlons de votre enfant</h2>
+
+      <p class="text-secondary">
+        Nous sommes à votre écoute pour répondre à vos questions.
+      </p>
+    </div>
+
+    @if (loading) {
+      <p class="text-center text-secondary">Chargement des coordonnées...</p>
+    } @else if (error) {
+      <p class="text-center text-danger">
+        Impossible de charger les coordonnées.
+      </p>
+    } @else if (garderie) {
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <div class="display-5 mb-3">📍</div>
+            <h3 class="h5 fw-bold">Notre adresse</h3>
+            <p class="text-secondary mb-0">{{ garderie.adresse }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <div class="display-5 mb-3">📞</div>
+            <h3 class="h5 fw-bold">Téléphone</h3>
+            <p class="text-secondary mb-0">{{ garderie.telephone }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+            <div class="display-5 mb-3">✉️</div>
+            <h3 class="h5 fw-bold">E-mail</h3>
+            <p class="text-secondary mb-0">{{ garderie.email }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
