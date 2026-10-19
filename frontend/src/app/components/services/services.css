@@ -1,0 +1,23 @@
+
+.services-section {
+  background-color: #ffffff;
+}
+
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-icon {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.section-description {
+  max-width: 600px;
+}
