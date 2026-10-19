@@ -1,0 +1,14 @@
+.hero-section {
+  background: linear-gradient(135deg, #f0f7ff 0%, #fff8e8 100%);
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.hero-illustration {
+  background: linear-gradient(135deg, #dceeff, #fff0c2);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
